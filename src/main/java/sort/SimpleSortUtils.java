@@ -27,7 +27,18 @@ public class SimpleSortUtils {
      * 核心思想：把第一个元素当作最大的，依次与其后面的元素比较，如果有比其大的，与最小的元素替换
      */
     public static void selectSortDesc(long[] arr) {
-
+        int size = arr.length;
+        for (int i = 0; i < size - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < size; j++) {
+                if (arr[j - 1] < arr[j]) {
+                    maxIndex = j;
+                }
+            }
+            long buf = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = buf;
+        }
     }
 
     /**
@@ -37,10 +48,10 @@ public class SimpleSortUtils {
      */
     public static void selectSortAsc(long[] arr) {
         int size = arr.length;
-        for (int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             int minIndex = i;
-            for(int j = i + 1; j < size; j++){
-                if(arr[minIndex] > arr[j]){
+            for (int j = i + 1; j < size; j++) {
+                if (arr[minIndex] > arr[j]) {
                     minIndex = j;
                 }
             }
@@ -77,12 +88,17 @@ public class SimpleSortUtils {
         }
     }
 
+
+    public static void quickSort(long[] arr) {
+
+    }
+
     public static void main(String[] args) {
         long[] array = {3, 2, 1, 43, 22, 14, 12};
         //long[] array = {1,2,3,4,5,6};
         //insertSort(array);
         //bubbleSort(array);
-        selectSortAsc(array);
+        selectSortDesc(array);
         for (long ele : array) {
             System.out.println(ele);
         }
