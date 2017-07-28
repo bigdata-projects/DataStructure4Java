@@ -11,7 +11,7 @@ public class SimpleSortUtils {
      */
     public static void bubbleSort(long[] arr) {
         int size = arr.length;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 1; i++) {
             for (int j = i + 1; j < size; j++) {
                 if (arr[j - 1] > arr[j]) {
                     long buf = arr[j];
