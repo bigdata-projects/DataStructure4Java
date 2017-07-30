@@ -39,7 +39,10 @@ public class LinkList<E> {
      */
     public Node removeFirst() {
         Node tmp = head;
-        head = tmp.next;
+        if(null != head){
+            head = tmp.next;
+        }
+
         return tmp;
     }
 
