@@ -139,7 +139,6 @@ public class Tree<E extends Comparable> {
             current = current.left;
         }
         if (successor != delNode.right){
-            //?????
             successorParent.left = successor.right;
             successor.right = delNode.right;
         }
@@ -212,7 +211,7 @@ public class Tree<E extends Comparable> {
         if (null != local) {
             //后序遍历左子树
             preOrder(local.left);
-            
+
             //访问根节点
             System.out.println(local.data);
 
@@ -242,8 +241,12 @@ public class Tree<E extends Comparable> {
         System.out.println(tree.root.right.left.data);
         System.out.println(tree.root.left.data);
         System.out.println(tree.element(new Integer(3)).data);*/
-        Node node = new Node(new Integer(20));
-        tree.preOrder(node);
+
+        tree.preOrder(tree.root);
+
+        tree.remove(new Integer(3));
+        System.out.println("---After remove---");
+        tree.preOrder(tree.root);
     }
 
 }
