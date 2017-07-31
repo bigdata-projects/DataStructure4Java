@@ -15,7 +15,7 @@ public class CustStack {
     private int top;
 
     public CustStack() {
-        this.items = new int[10];
+        this.items = new int[100];
         this.top = -1;
     }
 
